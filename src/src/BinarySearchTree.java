@@ -12,14 +12,12 @@ public class BinarySearchTree<T extends Comparable<? super T> > {
     // TODO: initialisation
     public BinarySearchTree(T item) {
         root = new BinaryNode(item);
-        return;
     }
 
     // TODO: on insere un nouvel item a partir de la racine
     // O(log(n))
     public void insert(T item) {
         root.insert(item);
-        return;
     }
 
     // TODO: est-ce qu'un item fais partie de l'arbre
@@ -45,14 +43,10 @@ public class BinarySearchTree<T extends Comparable<? super T> > {
     // TODO: retourner la liste d'item en String selon le bon format
     // O(n)
     public String toStringInOrder() {
-        StringBuilder result = new StringBuilder();
-        result.append("[");
+        ArrayList<T> result = new ArrayList();
         for (BinaryNode<T> node : getItemsInOrder()) {
-            result.append(node.getData());
-            result.append(", ");
+            result.add(node.getData());
         }
-        result.setLength(result.length() - 2);
-        result.append("]");
         return result.toString();
     }
 }

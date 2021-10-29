@@ -175,7 +175,9 @@ public class TestBinary {
             isGood &= tree.contains(randInt);
         }
         long duration = (System.nanoTime() - startTime);
+        System.out.println(duration);
         TestHelper.printTest(isGood && duration < 500000000);
+                                                      //1320702100
     }
 
     private void testHeightComplexity() {

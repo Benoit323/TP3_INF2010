@@ -24,15 +24,14 @@ public class BinaryNode<T extends Comparable<? super T> > {
     {
         if(item.compareTo(data) <= 0)
             if(left == null)
-                left = new BinaryNode(item);
+                left = new BinaryNode<>(item);
             else
                 left.insert(item);
         else
             if(right == null)
-                right = new BinaryNode(item);
+                right = new BinaryNode<>(item);
             else
                 right.insert(item);
-        return;
     }
 
     // TODO: est-ce que l'item fais partie du noeuds courant
@@ -54,15 +53,12 @@ public class BinaryNode<T extends Comparable<? super T> > {
         int heightLeft = 0;
         int heightRight = 0;
         if(left != null){
-            heightLeft = 1 + left.getHeight(); //this can't work, no?
-            // a chaque fois que tu rerentre dans getHeight, ton height redemarre a 0.
-            // donc height = 1 avant de faire la recursion, et est reset a 0 apres l'appel recursif
+            heightLeft = 1+left.getHeight();
         }
         if(right != null){
-            heightRight = 1 + right.getHeight();
+            heightRight = 1+right.getHeight();
         }
         return Math.max(heightLeft, heightRight); //O(1)-->math.max parce qu'on compare seul 2 valeurs
-        //return heightLeft < heightRight ? heightRight : heightLeft;
     }
 
     // TODO: l'ordre d'insertion dans la liste est l'ordre logique

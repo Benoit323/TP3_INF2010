@@ -46,7 +46,10 @@ public class BinarySearchTree<T extends Comparable<? super T> > {
     // TODO: retourner la liste d'item en String selon le bon format
     // O(n)
     public String toStringInOrder() {
-        
-        return "[1, 2, 3]";
+        String result = "[";
+        for(BinaryNode<T> node : getItemsInOrder())
+            result += node.getData() + ", ";
+        result += "]";
+        return result;
     }
 }

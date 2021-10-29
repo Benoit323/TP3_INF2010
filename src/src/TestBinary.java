@@ -190,6 +190,7 @@ public class TestBinary {
             isGood &= max - 1 == tree.getHeight();
         }
         long duration = (System.nanoTime() - startTime);
+        System.out.println(duration);
         TestHelper.printTest(isGood && duration < 1600000000);
     }
 }

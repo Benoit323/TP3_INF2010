@@ -51,9 +51,18 @@ public class BinaryNode<T extends Comparable<? super T> > {
     // TODO: on retourne la maximale de l'arbre
     // O(n)
     public int getHeight() {
-        if(left == null && right == null)
-            return 0;
-        return 1 + Math.max(right.getHeight(), left.getHeight());
+        int heightLeft = 0;
+        int heightRight = 0;
+        if(left != null){
+            heightLeft = 1 + left.getHeight(); //this can't work, no?
+            // a chaque fois que tu rerentre dans getHeight, ton height redemarre a 0.
+            // donc height = 1 avant de faire la recursion, et est reset a 0 apres l'appel recursif
+        }
+        if(right != null){
+            heightRight = 1 + right.getHeight();
+        }
+        return Math.max(heightLeft, heightRight); //O(1)-->math.max parce qu'on compare seul 2 valeurs
+        //return heightLeft < heightRight ? heightRight : heightLeft;
     }
 
     // TODO: l'ordre d'insertion dans la liste est l'ordre logique

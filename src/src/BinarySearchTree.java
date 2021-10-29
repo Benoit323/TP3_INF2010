@@ -25,8 +25,7 @@ public class BinarySearchTree<T extends Comparable<? super T> > {
     // TODO: est-ce qu'un item fais partie de l'arbre
     // O(log(n))
     public boolean contains(T item) {
-        root.contains(item);
-        return false;
+        return root.contains(item);
     }
 
     // TODO: trouver la hauteur de l'arbre
@@ -46,10 +45,14 @@ public class BinarySearchTree<T extends Comparable<? super T> > {
     // TODO: retourner la liste d'item en String selon le bon format
     // O(n)
     public String toStringInOrder() {
-        String result = "[";
-        for(BinaryNode<T> node : getItemsInOrder())
-            result += node.getData() + ", ";
-        result += "]";
-        return result;
+        StringBuilder result = new StringBuilder();
+        result.append("[");
+        for (BinaryNode<T> node : getItemsInOrder()) {
+            result.append(node.getData());
+            result.append(", ");
+        }
+        result.setLength(result.length() - 2);
+        result.append("]");
+        return result.toString();
     }
 }

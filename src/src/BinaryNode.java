@@ -61,12 +61,10 @@ public class BinaryNode<T extends Comparable<? super T> > {
     // O(n)
     public void fillListInOrder(List<BinaryNode<T>> result) {
         if(left != null) {
-            result.add(left);
             left.fillListInOrder(result);
         }
         result.add(this);
         if(right != null) {
-            result.add(right);
             right.fillListInOrder(result);
         }
     }

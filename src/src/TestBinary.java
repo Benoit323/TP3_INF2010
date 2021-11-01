@@ -11,11 +11,9 @@ public class TestBinary {
             if (!m.getName().equals("test")) {
                 try {
                     m.invoke(this);
-                }
-                catch (InvocationTargetException e) {
+                } catch (InvocationTargetException e) {
                     TestHelper.printError(e.getTargetException().getCause().getMessage());
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }
@@ -177,7 +175,7 @@ public class TestBinary {
         long duration = (System.nanoTime() - startTime);
         System.out.println(duration);
         TestHelper.printTest(isGood && duration < 500000000);
-                                                      //1320702100
+        //1320702100
     }
 
     private void testHeightComplexity() {

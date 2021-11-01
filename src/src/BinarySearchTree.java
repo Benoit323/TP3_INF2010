@@ -3,11 +3,12 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class BinarySearchTree<T extends Comparable<? super T> > {
+public class BinarySearchTree<T extends Comparable<? super T>> {
 
     private BinaryNode<T> root;
 
-    public BinarySearchTree() { }
+    public BinarySearchTree() {
+    }
 
     // TODO: initialisation
     public BinarySearchTree(T item) {
